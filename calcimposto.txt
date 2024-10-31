@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Valor Unitário</title>
+    <link rel="stylesheet" href="calc_imposto.css">
+    <link rel="shortcut icon" type="imagex/png" href="microblau.png">
+</head>
+<body>
+    <div class="container">
+        <div class="titlemic">
+            <img src="microblaulogo.png" />
+            <h1>Cálculo de Valor Total com IPI</h1>
+        </div>
+        <div class="xcontainer">
+            <div class="hlcontainer">
+                <div class="highContainer">
+                    <ul class="input1">
+                        <input type="number" id="total_estipulado"> 
+                        <p>Valor Total Estipulado</p>
+                    </ul>
+                    <ul class="input1">
+                        <input type="number" id="unit_padrao"> 
+                        <p>Valor Unitário Padrão</p>  
+                    </ul>  
+                </div>
+                <div class="lowContainer">
+                    <ul class="input1">
+                        <input type="number" id="total_desejado">
+                        <p>Valor Total Desejado</p>
+                    </ul>
+                    <ul class="input1">
+                        <div class="result" id="Valor Unitário Calculado"></div>
+                        <button onclick="calcular()"> Calcular Novo Valor Unitário</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function calcular() {
+            let total_estipulado = parseFloat(document.getElementById('total_estipulado').value);
+            let unit_padrao = parseFloat(document.getElementById('unit_padrao').value);
+            let total_desejado = parseFloat(document.getElementById('total_desejado').value);
+            let resultado = (unit_padrao * total_desejado) / total_estipulado;
+            document.getElementById('resultado').innerText = "Resultado: " + resultado.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #292e3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.titlemic {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    margin: 0px 60px;
+}
+
+.xcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.highContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.lowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+
+}
+
+.buttonContainer {
+    margin: 0px 20px;
+
+}
+
+.result {
+    width: 200px;
+    padding: 10px;
+    margin: 5px 0px;
+    margin-left: 0px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+input[type="number"] {
+    width: 200px;
+    padding: 10px;
+    margin: 5px 0px;
+    margin-left: 0px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.input1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 250px;
+    padding: 10px;
+    margin: 5px 0px;
+    margin-left: 0px;
+    background-color: #132c64;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #152031;
+}
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+img {
+    border-radius: 10px;
+}

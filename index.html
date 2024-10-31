@@ -16,12 +16,12 @@
         <div class="xcontainer">
             <div class="highContainer">
                 <div class="input1">
-                    <label for="total_estipulado">Valor Total Estipulado</label>
-                    <input type="number" id="total_estipulado" placeholder="Insira o valor total estipulado"> 
+                    <label for="unit_padrao">Valor Unitário Padrão</label>
+                    <input type="number" id="unit_padrao" placeholder="Insira o valor unitário padrão"> 
                 </div>
                 <div class="input1">
-                    <label for="unit_padrao">Valor Unitário Padrão</label>
-                    <input type="number" id="unit_padrao" placeholder="Insira o valor unitário padrão">  
+                    <label for="total_estipulado">Valor Total Estipulado</label>
+                    <input type="number" id="total_estipulado" placeholder="Insira o valor total estipulado"> 
                 </div>  
             </div>
             <div class="lowContainer">
@@ -49,7 +49,10 @@
             }
 
             let resultado = (unit_padrao * total_desejado) / total_estipulado;
-            document.getElementById('resultado').innerText = "Resultado: " + resultado.toFixed(2);
+            document.getElementById('resultado').innerText = "Resultado: " + resultado.toFixed(4);
+            document.getElementById('total_estipulado').value = total_estipulado.toFixed(4);
+            document.getElementById('unit_padrao').value = unit_padrao.toFixed(4);
+            document.getElementById('total_desejado').value = total_desejado.toFixed(4);
         }
     </script>
 
